@@ -1,0 +1,135 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "689503f33db625ec",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "temperature",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "36",
+        "payloadType": "num",
+        "x": 90,
+        "y": 360,
+        "wires": [
+            [
+                "ac7cdbccb609eaf9"
+            ]
+        ]
+    },
+    {
+        "id": "ac7cdbccb609eaf9",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "prueba",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "d5186265b286a473",
+        "x": 260,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "202ff498ce22e3e7",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "prueba",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "d5186265b286a473",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 460,
+        "wires": [
+            [
+                "c80bbe134c687f30"
+            ]
+        ]
+    },
+    {
+        "id": "c80bbe134c687f30",
+        "type": "influxdb out",
+        "z": "f6f2187d.f17ca8",
+        "influxdb": "a812866bf716d520",
+        "name": "Database",
+        "measurement": "prueba",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "prueba",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "prueba",
+        "x": 240,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "d5186265b286a473",
+        "type": "mqtt-broker",
+        "name": "MQTT",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "a812866bf716d520",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "database",
+        "name": "Server",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "1.8-flux",
+        "url": "http://localhost:8086",
+        "rejectUnauthorized": false
+    }
+]
