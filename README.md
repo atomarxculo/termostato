@@ -15,4 +15,4 @@ En el MQTT Broker, creamos un topic que recibirá los datos que luego se mandar�
 Tenemos que crear la base de datos donde se almacenarán los datos.  
 `create database prueba`
 
-La configuración que lleva el Node-RED se adjunta en el repositorio.
+La configuración que lleva el Node-RED se adjunta en el repositorio. En Node también hay que instalar el plugin de InfluxDB en el apartado *Menu* > *Manage Palette* > *Install* > Type: __node-red-contrib-influxdb__
