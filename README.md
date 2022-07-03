@@ -1,6 +1,7 @@
 # termostato
 
 ## Comandos para crear los contenedores de docker
+Pendiente pasar a docker-compose. Los puertos realmente no son necesarios al estar en una red host.
 ```shell
 docker run -it -p 1880:1880 -d --net=host --name mynodered nodered/node-red
 docker run -it -p 1883:1883 -p 9001:9001 -d --net=host --name mymqttbroker eclipse-mosquitto
